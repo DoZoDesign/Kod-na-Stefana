@@ -1,0 +1,20 @@
+On rightclick on villager named:Stefan
+		send "&f&lSiema player co porabiasz?" to the player
+		send "&f&lChcesz jakis itemek?Jesli tak wpisz /tak jak nie to /nie" to the player
+command /tak [<text>]:
+	trigger:
+		give player Diamond Boots named:"&dButy Stefanka" lore:"&fPrezent od Stefana" protection:1
+		send "&4&lWystarcza Ci buciki?" to the player
+command /nie [<text>]:
+	trigger:
+		send "Nie to nie" to the player
+command /stefanek [<text>]:
+	trigger:
+		if player have permissions "skript.stefan":
+			spawn villager named:Stefan
+			at the player location
+		if player don't have permissions "skript.stefan":
+On leftclick on villager named:"Stefan"
+	cancel event
+On damage on villager named:"Stefan"
+	cancel event
